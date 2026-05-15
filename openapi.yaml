@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: Surfreport API
+  version: 1.0.0
+  description: API for retrieving surf conditions for beaches
+
+servers:
+  - url: https://api.surfreport.com/v1
+
+paths:
+  /surfreport/{beachId}:
+    get:
+      summary: Get surf report for a beach
+      parameters:
+        - name: beachId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the beach
+
+      responses:
+        "200":
+          description: Success
