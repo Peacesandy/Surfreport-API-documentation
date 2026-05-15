@@ -22,3 +22,30 @@ paths:
       responses:
         "200":
           description: Success
+
+parameters:
+  - name: beachId
+
+        - name: days
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 3
+          description: Number of forecast days to return (max 7)
+
+        - name: time
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Unix timestamp in milliseconds (UTC)
+
+        - name: units
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [imperial, metric]
+            default: imperial
+          description: Unit system for values (temperature, wave height)
